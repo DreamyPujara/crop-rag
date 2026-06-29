@@ -130,7 +130,7 @@ def run_all_experiments():
     os.makedirs("evaluation", exist_ok=True)
     with open("evaluation/experiment_results.json", "w") as f:
         json.dump(results, f, indent=2)
-    print("\n✅ All experiments done. Saved to evaluation/experiment_results.json")
+    print("\n All experiments done. Saved to evaluation/experiment_results.json")
     return results
 
 
