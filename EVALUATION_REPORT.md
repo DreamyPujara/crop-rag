@@ -58,7 +58,7 @@ CSV Dataset (2200 rows × 8 cols, 22 crop types)
 |----------|--------|------------|-------------|
 | **Row-level** | 2200 | ~45 | One sentence per CSV row: exact N/P/K/temperature values |
 | **Crop-aggregate** | 22 | ~120 | One summary per crop: mean ± range for all features |
-| **Hybrid** ✅ | 242 | ~70 avg | Aggregate (22) + 10 sampled rows per crop |
+| **Hybrid**  | 242 | ~70 avg | Aggregate (22) + 10 sampled rows per crop |
 
 ### Decision: Hybrid
 
@@ -187,17 +187,17 @@ Each generated answer includes `[1]`, `[2]`-style citations tied to specific ret
 |------------|---------|----------|----------|-----|
 | Chunking | row | 0.70 | 0.58 | 0.62 |
 | Chunking | aggregate | 0.80 | 0.65 | 0.72 |
-| Chunking | **hybrid** ✅ | **0.85** | **0.71** | **0.78** |
+| Chunking | **hybrid**  | **0.85** | **0.71** | **0.78** |
 | Embedding | minilm | 0.85 | 0.71 | 0.78 |
 | Embedding | mpnet | 0.87 | 0.74 | 0.81 |
 | Retrieval | semantic | 0.80 | 0.67 | 0.74 |
 | Retrieval | bm25 | 0.75 | 0.62 | 0.68 |
-| Retrieval | **hybrid** ✅ | **0.85** | **0.71** | **0.78** |
+| Retrieval | **hybrid**  | **0.85** | **0.71** | **0.78** |
 | k value | 3 | 0.78 | 0.61 | 0.76 |
-| k value | **5** ✅ | **0.85** | **0.71** | **0.78** |
+| k value | **5**  | **0.85** | **0.71** | **0.78** |
 | k value | 10 | 0.88 | 0.76 | 0.78 |
 | Rewriter | no | 0.80 | 0.66 | 0.73 |
-| Rewriter | **yes** ✅ | **0.85** | **0.71** | **0.78** |
+| Rewriter | **yes**  | **0.85** | **0.71** | **0.78** |
 
 ---
 
@@ -241,13 +241,13 @@ Each generated answer includes `[1]`, `[2]`-style citations tied to specific ret
 
 ## 9. Bonus Features Implemented
 
-- ✅ **Hybrid retrieval** — BM25 + Semantic with RRF (k=60)
-- ✅ **Query rewriting** — 10 agronomic shorthand expansions
-- ✅ **Metadata filtering** — filter by crop label, ph range, etc.
-- ✅ **CrossEncoder reranker** — available via `--reranker` flag
-- ✅ **LLM-as-judge** — faithfulness, relevance, correctness, hallucination scoring
-- ✅ **Citation grounding** — numbered passage citations in every answer
-- ✅ **Streaming generation** — `generate_answer_stream()` for real-time output
+-  **Hybrid retrieval** — BM25 + Semantic with RRF (k=60)
+-  **Query rewriting** — 10 agronomic shorthand expansions
+-  **Metadata filtering** — filter by crop label, ph range, etc.
+-  **CrossEncoder reranker** — available via `--reranker` flag
+-  **LLM-as-judge** — faithfulness, relevance, correctness, hallucination scoring
+-  **Citation grounding** — numbered passage citations in every answer
+-  **Streaming generation** — `generate_answer_stream()` for real-time output
 
 ---
 
