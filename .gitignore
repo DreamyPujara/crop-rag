@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+chroma_db/
+chroma_*/
+*.ipynb_checkpoints/
+.DS_Store
+evaluation/eval_results.json
+evaluation/experiment_results.json
+evaluation/feature_distributions.png
