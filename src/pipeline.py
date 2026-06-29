@@ -72,7 +72,7 @@ class CropRAGPipeline:
             use_rewriter=use_rewriter,
             use_reranker=use_reranker,
         )
-        print("\n✅ Pipeline ready.\n")
+        print("\n Pipeline ready.\n")
 
     def query(
         self,
