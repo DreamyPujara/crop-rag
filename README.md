@@ -1,4 +1,4 @@
-# 🌾 Crop Recommendation RAG System
+#  Crop Recommendation RAG System
 
 A production-style Retrieval-Augmented Generation (RAG) system that answers natural-language queries about optimal crop recommendations, grounded strictly in the [Kaggle Crop Recommendation Dataset](https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset).
 
