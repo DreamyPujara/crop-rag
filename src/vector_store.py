@@ -13,8 +13,8 @@ import os
 
 
 EMBEDDING_MODELS = {
-    "minilm": "sentence-transformers/all-MiniLM-L6-v2",       # fast, small
-    "mpnet":  "sentence-transformers/all-mpnet-base-v2",       # stronger, slower
+    "minilm": "sentence-transformers/all-MiniLM-L6-v2",       
+    "mpnet":  "sentence-transformers/all-mpnet-base-v2",       
 }
 
 
@@ -35,7 +35,7 @@ class VectorStore:
         self.encoder = SentenceTransformer(self.model_name)
 
         self.client = chromadb.PersistentClient(path=persist_dir)
-        # Delete existing collection to allow re-indexing
+       
         try:
             self.client.delete_collection(collection_name)
         except Exception:
@@ -57,7 +57,7 @@ class VectorStore:
             texts, batch_size=batch_size, show_progress_bar=True, normalize_embeddings=True
         ).tolist()
 
-        # Upsert in batches of 500 (ChromaDB limit)
+        
         for start in range(0, len(docs), 500):
             end = start + 500
             self.collection.add(
@@ -95,7 +95,7 @@ class VectorStore:
             hits.append({
                 "text": doc,
                 "metadata": meta,
-                "score": float(1 - dist),   # cosine similarity
+                "score": float(1 - dist),   
             })
         return hits
 
