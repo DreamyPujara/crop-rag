@@ -367,7 +367,7 @@ def run_evaluation(
     with open(output_path, "w") as f:
         json.dump(output, f, indent=2)
 
-    print(f"\n✅ Evaluation complete. Results saved to {output_path}")
+    print(f"\n Evaluation complete. Results saved to {output_path}")
     print("\n── Aggregated Metrics ──")
     for k2, v in agg.items():
         if isinstance(v, float):
